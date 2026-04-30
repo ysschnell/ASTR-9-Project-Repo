@@ -1,0 +1,24 @@
+#%%
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_pdf import PdfPages
+import lightkurve as lk
+from astroquery.simbad import Simbad
+import astropy.units as u
+import time
+import pandas as pd
+from astropy.io import fits
+from scipy.optimize import curve_fit
+#%%
+lam_ref = 6705.1
+flux = fits.open('D:\Lithium Dating/ts23_2020_MAY/2020may20/n0044_HIP55192_ts23_2020may20_spectrum.fits')[0].data
+wavelength = fits.open('D:\Lithium Dating/ts23_2020_MAY/2020may20/ts23_2020may20_thar_solution_wavearr.fits')[0].data
+plt.plot(wavelength, flux)
+plt.xlabel("Wavelength")
+plt.ylabel("Flux")
+plt.show
+
+
+plt.plot(lam_ref, wavelength)
+plt.show
+# %%
