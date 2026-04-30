@@ -18,7 +18,40 @@ plt.xlabel("Wavelength")
 plt.ylabel("Flux")
 plt.show
 
+def f_mod1(m,b,c_1,c_2,s,rvs,sig,lam_ref):
+    const = (-0.5*(6707.79+s-rvs-wavelength)**2)/(sig**2)
+    const_2 = (wavelength-6707.0)
+    const_3 = ((-0.5*(lam_ref-rvs-wavelength)**2)/sig**2)
+    return (((m*const_2)+b)*(((c_1*(np.e**const)))+(c_2*(np.e)**const_3)))
+            
+#def f_mod(m,b,c_1,c_2,s,rvs,sig):
+    const = (-0.5*(6707.79+s-rvs-wavelength)**2)/(sig**2)
+    const_2 = (wavelength-6707.0)
+    const_3 = ((-0.5(6707.79+s-rvs-wavelength)**2)/sig**2)
+    const_4 = ((-0.5(6705.105+s-rvs-wavelength)**2)/sig**2)
+    return (((m*const_2)+b)*(((c_1*(np.e**const)))+(c_2*(np.e)**const)))
 
-plt.plot(lam_ref, wavelength)
+def sum_li(c_1,sig):
+    const1 = (2*np.pi)**(1/2)
+    return const1*c_1*sig
+
+def li_eqw(c_1,sig,H):
+    const1 = (2*np.pi)**(1/2)
+    return (const1*c_1*sig)/H
+
+ndim = 2
+
+
+sig = 1000
+s = 0.0119
+c_1=1341
+c_2=14
+m=12
+b=1
+plt.plot(wavelength)
+plt.xlim(6700,6710)
+plt.ylim()
+plt.show
+
 plt.show
 # %%
